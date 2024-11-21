@@ -2,6 +2,7 @@ import express from "express";
 import authMiddleware from "../middlewares/auth.middleware";
 import authController from "../controllers/auth.controller";
 import categoryController from "../controllers/category.controller";
+import productController from "../controllers/product.controller";
 
 const router = express.Router();
 
@@ -17,5 +18,12 @@ router.post("/categories", categoryController.create);
 router.get("/categories/:id", categoryController.findOne);
 router.put("/categories/:id", categoryController.update);
 router.delete("/categories/:id", categoryController.delete);
+
+// Products
+router.get("/products", productController.findAll);
+router.post("/products", productController.create);
+router.get("/products/:id", productController.findOne);
+router.put("/products/:id", productController.update);
+router.delete("/products/:id", productController.delete);
 
 export default router;

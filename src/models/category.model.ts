@@ -1,26 +1,26 @@
-import mongoose, { Types } from "mongoose";
+import mongoose, { Types } from 'mongoose';
 
 export interface Category {
-    _id?: Types.ObjectId;
-    name: string;
-    createdAt: string;
-    updatedAt: string;
+  _id?: Types.ObjectId;
+  name: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 const Schema = mongoose.Schema;
 
 const CategoriesSchema = new Schema<Category>(
-    {
-        name: {
-            type: Schema.Types.String,
-            required: true,
-        },
+  {
+    name: {
+      type: Schema.Types.String,
+      required: true,
     },
-    {
-        timestamps: true,
-    }
+  },
+  {
+    timestamps: true,
+  }
 );
 
-const CategoryModel = mongoose.model("Categories", CategoriesSchema);
+const CategoryModel = mongoose.model('Categories', CategoriesSchema);
 
 export default CategoryModel;
